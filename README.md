@@ -1,6 +1,6 @@
 # Image-Flex by teamturing
 Add on-demand image resizing to CloudFront using Lambda@Edge.
-Forked and modified from [Image-Flex]("https://github.com/HoraceShmorace/Image-Flex")
+Forked and modified from [Image-Flex](https://github.com/HoraceShmorace/Image-Flex)
 ### Features
 * Quick deployment of lambda edge functions for image resizing
   * viewer-request : `UriToS3Key`
