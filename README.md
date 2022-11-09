@@ -1,4 +1,4 @@
-# TCMS Image Flex
+# Image-Flex by teamturing
 Add on-demand image resizing to CloudFront using Lambda@Edge.
 Forked and modified from [Image-Flex]("https://github.com/HoraceShmorace/Image-Flex")
 ### Features
@@ -7,6 +7,13 @@ Forked and modified from [Image-Flex]("https://github.com/HoraceShmorace/Image-F
   * origin-response : `GetOrCreateImage`
 * Managing create / update Cache-Behavior for CloudFront Distribution
   * `image_flex_config.json`
+### Difference from Image-Flex (original repo)
+* Simplified CloudFormation stack
+  * Only `EdgeLambdaRole`, `OriginAccessId`, `UriToS3KeyFunction` `GetOrCreateImageFunction` are created
+* Can be used with existing CloudFront Distribution
+* Limit upper bound of image size
+  * if width or height is larger than `2000` then return original image
+  
 ## Quick Start
 ### 1. Deploy Lambda Function
 ```bash
