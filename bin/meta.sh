@@ -28,5 +28,5 @@ fi
 
 Application=$1
 Account=$(aws sts get-caller-identity | python3 -c "import sys, json; print(json.load(sys.stdin)['Account'])")
-Stackname=${Application}-${Account}-${ENV}
+Stackname=tcms-image-flex-${ENV}
 DeployBucket=${Stackname}-deploy
