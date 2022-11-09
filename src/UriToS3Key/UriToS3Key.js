@@ -12,6 +12,13 @@ const UriToS3Key = event => {
 
   if (!width || isNaN(parseInt(width, 10))) return request
 
+  if (width > 2000 || height > 2000) {
+    request.querystring = querystring.replace(/&?w=\d+/, '')
+    request.querystring = querystring.replace(/&?h=\d+/, '')
+    return request
+  }
+
+
   const [,prefix, imageName, prevExtension] = uri.match(/(.*)\/(.*)\.(\w*)/)
   const acceptHeader = Array.isArray(headers.accept)
     ? headers.accept[0].value

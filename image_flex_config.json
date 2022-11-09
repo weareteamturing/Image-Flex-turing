@@ -33,12 +33,12 @@
                 "Quantity": 2,
                 "Items": [
                     {
-                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-dev-UriToS3Key:1",
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-dev-UriToS3Key:3",
                         "EventType": "viewer-request",
                         "IncludeBody": true
                     },
                     {
-                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-dev-GetOrCreateImage:4",
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-dev-GetOrCreateImage:6",
                         "EventType": "origin-response",
                         "IncludeBody": false
                     }
@@ -109,12 +109,12 @@
                 "Quantity": 2,
                 "Items": [
                     {
-                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-prod-UriToS3Key:1",
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-prod-UriToS3Key:2",
                         "EventType": "viewer-request",
                         "IncludeBody": true
                     },
                     {
-                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-prod-GetOrCreateImage:1",
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-prod-GetOrCreateImage:2",
                         "EventType": "origin-response",
                         "IncludeBody": false
                     }

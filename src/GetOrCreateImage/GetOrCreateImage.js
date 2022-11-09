@@ -45,7 +45,9 @@ const GetOrCreateImage = async event => {
   height = parseInt(height, 10) || null
   width = parseInt(width, 10)
 
-  if (!width) return response
+  if (!width) {
+    return response
+  }
 
   return S3.getObject({ Bucket: bucket, Key: sourceKey })
     .promise()
