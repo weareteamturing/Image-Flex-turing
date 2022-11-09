@@ -1,0 +1,154 @@
+{
+    "dev": {
+        "DistributionId": "E3QYKLRN7D7RH4",
+        "CacheBehavior_1": {
+            "PathPattern": "*",
+            "TargetOriginId": "dev-cms-video-thumbnails.s3.ap-northeast-2.amazonaws.com",
+            "TrustedSigners": {
+                "Enabled": false,
+                "Quantity": 0
+            },
+            "TrustedKeyGroups": {
+                "Enabled": false,
+                "Quantity": 0
+            },
+            "ViewerProtocolPolicy": "allow-all",
+            "AllowedMethods": {
+                "Quantity": 2,
+                "Items": [
+                    "HEAD",
+                    "GET"
+                ],
+                "CachedMethods": {
+                    "Quantity": 2,
+                    "Items": [
+                        "HEAD",
+                        "GET"
+                    ]
+                }
+            },
+            "SmoothStreaming": false,
+            "Compress": true,
+            "LambdaFunctionAssociations": {
+                "Quantity": 2,
+                "Items": [
+                    {
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-dev-UriToS3Key:1",
+                        "EventType": "viewer-request",
+                        "IncludeBody": true
+                    },
+                    {
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-dev-GetOrCreateImage:4",
+                        "EventType": "origin-response",
+                        "IncludeBody": false
+                    }
+                ]
+            },
+            "FunctionAssociations": {
+                "Quantity": 0
+            },
+            "FieldLevelEncryptionId": "",
+            "ForwardedValues": {
+                "QueryString": true,
+                "Cookies": {
+                    "Forward": "none"
+                },
+                "Headers": {
+                    "Quantity": 4,
+                    "Items": [
+                        "Origin",
+                        "Access-Control-Request-Method",
+                        "Access-Control-Allow-Origin",
+                        "Access-Control-Request-Headers"
+                    ]
+                },
+                "QueryStringCacheKeys": {
+                    "Quantity": 2,
+                    "Items": [
+                        "h",
+                        "w"
+                    ]
+                }
+            },
+            "MinTTL": 0,
+            "DefaultTTL": 86400,
+            "MaxTTL": 31536000
+        }
+    },
+    "prod": {
+        "DistributionId": "E6UE379PRNMCA",
+        "CacheBehavior_1": {
+            "PathPattern": "*",
+            "TargetOriginId": "비디오 썸네일",
+            "TrustedSigners": {
+                "Enabled": false,
+                "Quantity": 0
+            },
+            "TrustedKeyGroups": {
+                "Enabled": false,
+                "Quantity": 0
+            },
+            "ViewerProtocolPolicy": "allow-all",
+            "AllowedMethods": {
+                "Quantity": 2,
+                "Items": [
+                    "HEAD",
+                    "GET"
+                ],
+                "CachedMethods": {
+                    "Quantity": 2,
+                    "Items": [
+                        "HEAD",
+                        "GET"
+                    ]
+                }
+            },
+            "SmoothStreaming": false,
+            "Compress": true,
+            "LambdaFunctionAssociations": {
+                "Quantity": 2,
+                "Items": [
+                    {
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-prod-UriToS3Key:1",
+                        "EventType": "viewer-request",
+                        "IncludeBody": true
+                    },
+                    {
+                        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:755784673120:function:tcms-image-flex-prod-GetOrCreateImage:1",
+                        "EventType": "origin-response",
+                        "IncludeBody": false
+                    }
+                ]
+            },
+            "FunctionAssociations": {
+                "Quantity": 0
+            },
+            "FieldLevelEncryptionId": "",
+            "ForwardedValues": {
+                "QueryString": true,
+                "Cookies": {
+                    "Forward": "none"
+                },
+                "Headers": {
+                    "Quantity": 4,
+                    "Items": [
+                        "Origin",
+                        "Access-Control-Request-Method",
+                        "Access-Control-Allow-Origin",
+                        "Access-Control-Request-Headers"
+                    ]
+                },
+                "QueryStringCacheKeys": {
+                    "Quantity": 2,
+                    "Items": [
+                        "h",
+                        "w"
+                    ]
+                }
+            },
+            "MinTTL": 0,
+            "DefaultTTL": 86400,
+            "MaxTTL": 31536000
+        }
+    }
+}
