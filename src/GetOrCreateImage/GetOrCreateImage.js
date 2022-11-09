@@ -26,9 +26,18 @@ const GetOrCreateImage = async event => {
   } = event.Records[0]
 
   if (!['403', '404'].includes(status)) return response
-
+  
   let { nextExtension, height, sourceImage, width } = parse(querystring)
-  const [bucket] = domainName.match(/.+(?=\.s3\.amazonaws\.com)/i)
+  const bucket = domainName.split('.s3.')[0]
+
+  console.log({
+    'bucket': bucket,
+    'sourceImage': sourceImage,
+    'nextExtension': nextExtension,
+    'width': width,
+    'height': height,
+  })
+  
   const contentType = 'image/' + nextExtension
   const key = uri.replace(/^\//, '')
   const sourceKey = sourceImage.replace(/^\//, '')
