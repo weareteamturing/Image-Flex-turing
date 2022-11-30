@@ -42,10 +42,7 @@ def get_stage_config(stage):
     with open("image_flex_config.json") as f:
         image_flex_config = json.load(f)
 
-    if stage == "dev":
-        return image_flex_config["dev"]
-    elif stage == "prod":
-        return image_flex_config["prod"]
+    return image_flex_config[stage]
 
 
 def set_stage_config(stage, updating_config):
@@ -112,7 +109,7 @@ def view_stage_distribution_config(stage):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("stage", help="stage name", type=str, choices=["dev", "prod"])
+    parser.add_argument("stage", help="stage name", type=str)
     parser.add_argument("mode", help="mode", type=str, choices=["update", "view"])
 
     args = parser.parse_args()
